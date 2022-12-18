@@ -9,7 +9,17 @@ import java.util.function.Supplier;
 
 public class PhoneFactory {
 
-    private final Map<String, Supplier<Phone>> phoneMap = new HashMap<>();
+    public static final PhoneFactory INSTANCE;
+
+    private final Map<String, Supplier<Phone>> phoneMap;
+
+    static {
+        INSTANCE = new PhoneFactory();
+    }
+
+    private PhoneFactory() {
+        phoneMap  = new HashMap<>();
+    }
 
     public Phone getPhone(String phoneType) {
         return phoneMap.getOrDefault(phoneType, () -> null).get();

@@ -7,12 +7,12 @@ import java.time.LocalDate;
 
 public class ProjectDriver {
     public static void main(String[] args) {
-        PhoneFactory phoneFactory = new PhoneFactory();
+        PhoneFactory phoneFactory = PhoneFactory.INSTANCE;
 
         //registered a function that creates an A53 phone
         phoneFactory.setPhoneConstructor("A53", ProjectDriver::createA53);
 
-        System.out.println(phoneFactory.getPhone("A523"));
+        System.out.println(phoneFactory.getPhone("A53"));
     }
 
     public static Phone createA53() {
