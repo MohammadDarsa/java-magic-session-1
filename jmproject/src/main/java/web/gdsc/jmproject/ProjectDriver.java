@@ -1,10 +1,10 @@
 package web.gdsc.jmproject;
 
-import web.gdsc.jmlibrary.CarFactory;
+import web.gdsc.jmlibrary.PhoneFactory;
 
 public class ProjectDriver {
     public static void main(String[] args) {
-        CarFactory carFactory = new CarFactory();
-        System.out.println(carFactory.getCar("ford"));
+        PhoneFactory phoneFactory = new PhoneFactory();
+        System.out.println(phoneFactory.getPhone("Iphone 13"));
     }
 }
